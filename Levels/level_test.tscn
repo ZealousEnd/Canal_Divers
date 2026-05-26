@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b81x8arkvm687"]
+
+[ext_resource type="Texture2D" uid="uid://di86wtf13gjo5" path="res://Textures/256x256/Grass/Grass_03-256x256.png" id="1_3vr47"]
+[ext_resource type="PackedScene" uid="uid://dqtwb5ffnc4p4" path="res://Player/player.tscn" id="2_7mba1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mba1"]
+size = Vector3(15.03, 0.325, 15.29)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soq8b"]
+albedo_texture = ExtResource("1_3vr47")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sppqt"]
+size = Vector3(15, 0.19, 15)
+
+[node name="level" type="Node3D" unique_id=2092884901]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1955439038]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1258260494]
+shape = SubResource("BoxShape3D_7mba1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=143247271]
+material_override = SubResource("StandardMaterial3D_soq8b")
+mesh = SubResource("BoxMesh_sppqt")
+
+[node name="player" parent="." unique_id=135545075 instance=ExtResource("2_7mba1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6103401, 2.1101656, -0.227243)
