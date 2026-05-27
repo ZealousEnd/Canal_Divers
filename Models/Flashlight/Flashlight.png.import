@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc0yte8uk4i13"
-path.s3tc="res://.godot/imported/Bricks_22-256x256.png-ea1c8b024ce42d20dbb11c32b911b915.s3tc.ctex"
+uid="uid://bh60ceppdmq3t"
+path.s3tc="res://.godot/imported/Flashlight.png-3babd0b97469036f25db3bea7a7ccd34.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/256x256/Bricks/Bricks_22-256x256.png"
-dest_files=["res://.godot/imported/Bricks_22-256x256.png-ea1c8b024ce42d20dbb11c32b911b915.s3tc.ctex"]
+source_file="res://Models/Flashlight/Flashlight.png"
+dest_files=["res://.godot/imported/Flashlight.png-3babd0b97469036f25db3bea7a7ccd34.s3tc.ctex"]
 
 [params]
 

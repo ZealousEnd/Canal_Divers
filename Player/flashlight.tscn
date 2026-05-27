@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://tp3xogefo0yw"]
+
+[ext_resource type="Script" uid="uid://58jg40lx1hhp" path="res://Player/flashlight.gd" id="1_gdo5f"]
+[ext_resource type="PackedScene" uid="uid://dysm87qnuj78t" path="res://Models/Flashlight/Flashlight.fbx" id="1_pcfr1"]
+
+[node name="flashlight" type="Node3D" unique_id=442812071]
+script = ExtResource("1_gdo5f")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=382624985]
+transform = Transform3D(1.7881393e-07, 1, -4.3711395e-08, -1, 1.7881393e-07, -4.2634933e-15, 3.552713e-15, 4.3711395e-08, 1, -0.017110825, 0.0035645962, -0.1264846)
+spot_angle_attenuation = 3.8637378
+
+[node name="Flashlight" parent="." unique_id=1417787495 instance=ExtResource("1_pcfr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017110825, 0.0035645962, -0.045595884)
+
+[editable path="Flashlight"]

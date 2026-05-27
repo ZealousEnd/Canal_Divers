@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6we7bc7igerw" path="res://Player/player.tscn.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://dc24ulqgwpxxu" path="res://Player/fp_cam.gd" id="2_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://tp3xogefo0yw" path="res://Player/flashlight.tscn" id="3_btcbx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kww3p"]
 
@@ -22,3 +23,6 @@ script = ExtResource("2_4ntmi")
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=613930043]
 transform = Transform3D(1, 0, 0, 0, 0.97949445, 0.20147114, 0, -0.20147114, 0.97949445, 0, 0.15508807, 0)
+
+[node name="flashlight" parent="head" unique_id=442812071 instance=ExtResource("3_btcbx")]
+transform = Transform3D(0.61, 0, 0, 0, 0.6047814, -0.07962099, 0, 0.07962099, 0.6047814, 0.2, 0, -0.095)

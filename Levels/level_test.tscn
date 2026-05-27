@@ -2,6 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://di86wtf13gjo5" path="res://Textures/256x256/Grass/Grass_03-256x256.png" id="1_3vr47"]
 [ext_resource type="PackedScene" uid="uid://dqtwb5ffnc4p4" path="res://Player/player.tscn" id="2_7mba1"]
+[ext_resource type="Texture2D" uid="uid://bc0yte8uk4i13" path="res://Textures/256x256/Bricks/Bricks_22-256x256.png" id="3_soq8b"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_soq8b"]
+
+[sub_resource type="Sky" id="Sky_sppqt"]
+sky_material = SubResource("PhysicalSkyMaterial_soq8b")
+
+[sub_resource type="Environment" id="Environment_3o0bi"]
+background_mode = 2
+sky = SubResource("Sky_sppqt")
+ambient_light_source = 3
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.06258161, 0.07490475, 0.11720439, 1)
+fog_density = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mba1"]
 size = Vector3(15.03, 0.325, 15.29)
@@ -13,7 +29,23 @@ uv1_scale = Vector3(3, 2, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_sppqt"]
 size = Vector3(15, 0.19, 15)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_soq8b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3o0bi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sppqt"]
+albedo_texture = ExtResource("3_soq8b")
+uv1_triplanar = true
+
 [node name="level" type="Node3D" unique_id=2092884901]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=191576928]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -34.926285, 82.94638, -40.325565)
+light_energy = 0.05
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=51473317]
+environment = SubResource("Environment_3o0bi")
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=1955439038]
 
@@ -24,5 +56,19 @@ shape = SubResource("BoxShape3D_7mba1")
 material_override = SubResource("StandardMaterial3D_soq8b")
 mesh = SubResource("BoxMesh_sppqt")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1505640299]
+transform = Transform3D(2.94, 0, 0, 0, 2.94, 0, 0, 0, 2.94, -7.0628953, 0.9883084, 0)
+shape = SubResource("BoxShape3D_soq8b")
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=288184408]
+transform = Transform3D(1, 0, 0, 0, 0.9970049, 0, 0, 0, 0.9970049, 0, 0, 0)
+mesh = SubResource("BoxMesh_3o0bi")
+surface_material_override/0 = SubResource("StandardMaterial3D_sppqt")
+
 [node name="player" parent="." unique_id=135545075 instance=ExtResource("2_7mba1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6103401, 2.1101656, -0.227243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4986124, 1.4939191, -2.3257964)
+
+[editable path="player"]
+[editable path="player/head/flashlight"]
+[editable path="player/head/flashlight/Flashlight"]
