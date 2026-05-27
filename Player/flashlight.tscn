@@ -8,9 +8,26 @@ script = ExtResource("1_gdo5f")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=382624985]
 transform = Transform3D(1.7881393e-07, 1, -4.3711395e-08, -1, 1.7881393e-07, -4.2634933e-15, 3.552713e-15, 4.3711395e-08, 1, -0.017110825, 0.0035645962, -0.1264846)
-spot_angle_attenuation = 3.8637378
+spot_angle_attenuation = 9.189512
 
 [node name="Flashlight" parent="." unique_id=1417787495 instance=ExtResource("1_pcfr1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017110825, 0.0035645962, -0.045595884)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1141899029]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1139.0
+offset_top = -52.0
+offset_right = -910.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 4
+max_value = 1000.0
+step = 0.5
+value = 100.0
 
 [editable path="Flashlight"]
