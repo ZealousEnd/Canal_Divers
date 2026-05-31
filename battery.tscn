@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://calej877gewxa"]
+
+[ext_resource type="Script" uid="uid://tbwux4548lxt" path="res://battery.gd" id="1_8fmpm"]
+[ext_resource type="Texture2D" uid="uid://q87rlfoacobh" path="res://Models/AA battery/DefaultMaterial_Base_Color.png" id="2_m10sm"]
+[ext_resource type="ArrayMesh" uid="uid://cwbdtt5guwwwv" path="res://Models/AA battery/Battery.obj" id="2_qise7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qise7"]
+height = 3.5726318
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq4wo"]
+albedo_texture = ExtResource("2_m10sm")
+
+[node name="Battery" type="StaticBody3D" unique_id=145728467]
+script = ExtResource("1_8fmpm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=292109606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003967285, 0)
+shape = SubResource("CylinderShape3D_qise7")
+
+[node name="Battery" type="MeshInstance3D" parent="." unique_id=718710655]
+transform = Transform3D(72.355, 0, 0, 0, 72.355, 0, 0, 0, 72.355, 0.00095101446, 0.013647616, -0.025529623)
+layers = 3
+material_override = SubResource("StandardMaterial3D_iq4wo")
+mesh = ExtResource("2_qise7")

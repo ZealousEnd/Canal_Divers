@@ -6,6 +6,19 @@ const JUMP_VELOCITY = 4.5
 
 
 func _physics_process(delta: float) -> void:
+
+	if %SeeCast.is_colliding():
+		var target = %SeeCast.get_collider()
+		if target and target.has_method("interact"):
+			$CanvasLayer/BoxContainer/Label.show()
+			
+			if Input.is_action_just_pressed("interact"):
+				target.interact(self)
+		else:
+			$CanvasLayer/BoxContainer/Label.hide()
+	else:
+		$CanvasLayer/BoxContainer/Label.hide()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

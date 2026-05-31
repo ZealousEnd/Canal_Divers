@@ -24,5 +24,24 @@ script = ExtResource("2_4ntmi")
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=613930043]
 transform = Transform3D(1, 0, 0, 0, 0.97949445, 0.20147114, 0, -0.20147114, 0.97949445, 0, 0.15508807, 0)
 
+[node name="SeeCast" type="RayCast3D" parent="head/Camera3D" unique_id=596866398]
+unique_name_in_owner = true
+transform = Transform3D(0.9999999, 0, 0, 0, 0.22196087, -1.4754016, 0, 2.476761, 0.13222104, -0.0023639202, -0.007929802, -0.23888142)
+
 [node name="flashlight" parent="head" unique_id=442812071 instance=ExtResource("3_btcbx")]
 transform = Transform3D(0.61, 0, 0, 0, 0.6047814, -0.07962099, 0, 0.07962099, 0.6047814, 0.2, 0, -0.095)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=971246447]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=1261336533]
+offset_left = 504.0
+offset_top = 288.0
+offset_right = 658.0
+offset_bottom = 328.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/BoxContainer" unique_id=1707676721]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press \"E\" to interact"

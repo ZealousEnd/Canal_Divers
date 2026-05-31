@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://di86wtf13gjo5" path="res://Textures/256x256/Grass/Grass_03-256x256.png" id="1_3vr47"]
 [ext_resource type="PackedScene" uid="uid://dqtwb5ffnc4p4" path="res://Player/player.tscn" id="2_7mba1"]
 [ext_resource type="Texture2D" uid="uid://bc0yte8uk4i13" path="res://Textures/256x256/Bricks/Bricks_22-256x256.png" id="3_soq8b"]
+[ext_resource type="PackedScene" uid="uid://calej877gewxa" path="res://battery.tscn" id="4_sppqt"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_soq8b"]
 
@@ -28,6 +29,8 @@ uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sppqt"]
 size = Vector3(15, 0.19, 15)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_soq8b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_soq8b"]
 
@@ -56,18 +59,25 @@ shape = SubResource("BoxShape3D_7mba1")
 material_override = SubResource("StandardMaterial3D_soq8b")
 mesh = SubResource("BoxMesh_sppqt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1505640299]
+[node name="player" parent="." unique_id=135545075 instance=ExtResource("2_7mba1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4986124, 1.4939191, -2.3257964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=47236406]
+physics_material_override = SubResource("PhysicsMaterial_soq8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1505640299]
 transform = Transform3D(2.94, 0, 0, 0, 2.94, 0, 0, 0, 2.94, -7.0628953, 0.9883084, 0)
 shape = SubResource("BoxShape3D_soq8b")
 debug_fill = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=288184408]
-transform = Transform3D(1, 0, 0, 0, 0.9970049, 0, 0, 0, 0.9970049, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=288184408]
+transform = Transform3D(2.94, 0, 0, 0, 2.9311945, 0, 0, 0, 2.9311945, -7.0628953, 0.9883084, 0)
+layers = 3
 mesh = SubResource("BoxMesh_3o0bi")
 surface_material_override/0 = SubResource("StandardMaterial3D_sppqt")
 
-[node name="player" parent="." unique_id=135545075 instance=ExtResource("2_7mba1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4986124, 1.4939191, -2.3257964)
+[node name="Battery" parent="." unique_id=858479408 instance=ExtResource("4_sppqt")]
+transform = Transform3D(1.065, 0, 0, 0, 1.065, 0, 0, 0, 1.065, -3.4924722, 3.0060017, 6.724592)
 
 [editable path="player"]
 [editable path="player/head/flashlight"]
