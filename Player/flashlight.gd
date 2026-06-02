@@ -31,7 +31,7 @@ func recharge(amount: float) -> void:
 	$ProgressBar.value += amount
 	print("Flashlight recharged")
 	
-	if flashlight_state == 0 and $ProgressBar.value > 0:
+	if flashlight_state == 0 and $ProgressBar.value < 0:
 		$SpotLight3D.light_energy = 9
 		flashlight_state = 1
 		print("Flashlight turned back on")

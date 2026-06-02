@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b81x8arkvm687"]
 
 [ext_resource type="Texture2D" uid="uid://di86wtf13gjo5" path="res://Textures/256x256/Grass/Grass_03-256x256.png" id="1_3vr47"]
-[ext_resource type="PackedScene" uid="uid://dqtwb5ffnc4p4" path="res://Player/player.tscn" id="2_7mba1"]
 [ext_resource type="Texture2D" uid="uid://bc0yte8uk4i13" path="res://Textures/256x256/Bricks/Bricks_22-256x256.png" id="3_soq8b"]
 [ext_resource type="PackedScene" uid="uid://calej877gewxa" path="res://battery.tscn" id="4_sppqt"]
+[ext_resource type="PackedScene" uid="uid://cxe12pklghfke" path="res://bicycle.tscn" id="5_3o0bi"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_soq8b"]
 
@@ -21,7 +21,7 @@ fog_light_color = Color(0.06258161, 0.07490475, 0.11720439, 1)
 fog_density = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mba1"]
-size = Vector3(15.03, 0.325, 15.29)
+size = Vector3(15.03, 0.3178955, 15.29)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soq8b"]
 albedo_texture = ExtResource("1_3vr47")
@@ -51,16 +51,16 @@ shadow_enabled = true
 environment = SubResource("Environment_3o0bi")
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=1955439038]
+transform = Transform3D(10.12, 0, 0, 0, 10.12, 0, 0, 0, 10.12, 0, -2.1841154, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1258260494]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.003552258, 0)
 shape = SubResource("BoxShape3D_7mba1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=143247271]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor/CollisionShape3D" unique_id=143247271]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_soq8b")
 mesh = SubResource("BoxMesh_sppqt")
-
-[node name="player" parent="." unique_id=135545075 instance=ExtResource("2_7mba1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4986124, 1.4939191, -2.3257964)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=47236406]
 physics_material_override = SubResource("PhysicsMaterial_soq8b")
@@ -79,6 +79,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sppqt")
 [node name="Battery" parent="." unique_id=858479408 instance=ExtResource("4_sppqt")]
 transform = Transform3D(1.065, 0, 0, 0, 1.065, 0, 0, 0, 1.065, -3.4924722, 3.0060017, 6.724592)
 
-[editable path="player"]
-[editable path="player/head/flashlight"]
-[editable path="player/head/flashlight/Flashlight"]
+[node name="Bicycle" parent="." unique_id=1160062197 instance=ExtResource("5_3o0bi")]
+mass = 80.0
+center_of_mass = Vector3(0, -10, 0)
