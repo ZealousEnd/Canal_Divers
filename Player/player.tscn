@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqtwb5ffnc4p4"]
 
-[ext_resource type="Script" uid="uid://6we7bc7igerw" path="res://Player/player.tscn.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://0nqwccecumyj" path="res://player.gd" id="1_btcbx"]
 [ext_resource type="Script" uid="uid://dc24ulqgwpxxu" path="res://Player/fp_cam.gd" id="2_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://tp3xogefo0yw" path="res://Player/flashlight.tscn" id="3_btcbx"]
 
@@ -9,7 +9,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vyvq2"]
 
 [node name="player" type="CharacterBody3D" unique_id=135545075]
-script = ExtResource("1_l8h54")
+script = ExtResource("1_btcbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=992498060]
 mesh = SubResource("CapsuleMesh_kww3p")
